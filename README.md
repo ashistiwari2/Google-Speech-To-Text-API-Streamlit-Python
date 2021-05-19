@@ -4,31 +4,31 @@
 [Sergiu Craioveanu](https://github.com/the-sergiu)
 [Paraschiva Mihai](https://github.com/ParaschivaMihai)
 ## Description
-Intuitive Streamlit App written in Python which converts a wavefile into text through Google Speech-to-Text API text generation capabilities. Requires a credentials JSON file obtained using the steps described [here](https://www.hellocodeclub.com/python-speech-recognition-create-program-with-google-api/).
+Intuitive Streamlit App written in Python which converts a wavefile into text by leveraging Google Speech-to-Text API capabilities. Requires a credentials JSON file obtained using the steps described [here](https://www.hellocodeclub.com/python-speech-recognition-create-program-with-google-api/).
 
 Languages available: English, Romanian.
 
 ## Setup
 1. Clone Repo (duh)
-2. Use a Google Account to obtain the credentials json, as per the link above.
-3. (Optional) Create a credentials folder.
+2. Use a Google Account to obtain the credentials JSON, as per the link above.
+3. (Optional) Create a credentials folder within the repo.
 
-To connect to the Google Speech-To-Text API, we require an OS environment variable which specifies the path for the configured credentials (a .json file).
+To connect to the Google Speech-To-Text API, we require an OS environment variable which specifies the path for the configured credentials (a .JSON file).
 
 **Linux**:
 ```
 export GOOGLE_APPLICATION_CREDENTIALS="/home/serj/Desktop/Google-Speech-To-Text-API-Python-App/credentials/key-file.json"
 ```
 
-4. Also, requirements should be installed using:
+4. Run the following command to install requirements:
 ```
 pip install -r requirements.txt
 ```
-Python version used: Python 3.7
+We used Python 3.7 for this project.
 
 ## Running the app
 
-To run the app, navigate to the **src/** folder within the repo, and simply run (after successfully completing the above steps):
+To run the app, navigate to the **src/** folder within the repo, and simply run:
 
 ```
 streamlit run interface.py
@@ -36,7 +36,7 @@ streamlit run interface.py
 
 ## App Display
 
-If you uploaded your own wave file containing speech, this is how the app might look.
+This is how the app looks after uploading one of our samples.
 
 
 ![App pic](misc/running_app.PNG)
