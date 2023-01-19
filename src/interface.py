@@ -9,7 +9,7 @@ from speech_to_text import generate_transcript
 st.write(os.listdir())
 
 # Stergem tot din folder-ul de cache
-folder = 'src/'
+folder = 'cache/'
 for filename in os.listdir(folder):
     file_path = os.path.join(folder, filename)
     try:
@@ -62,7 +62,7 @@ st.audio(uploaded_file, format='audio/ogg')
 
 # Generam byte data din fisierul uploadat cu posibilitatea de a-l stoca local
 bytes_data = uploaded_file.getvalue()
-with open('src/recording.wav', mode='bx') as f:
+with open('cache/recording.wav', mode='bx') as f:
     f.write(bytes_data)
 
 # Generam transcript/Speech to text-ul efectiv
