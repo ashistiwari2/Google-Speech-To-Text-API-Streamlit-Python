@@ -9,17 +9,17 @@ from speech_to_text import generate_transcript
 st.write(os.listdir())
 
 # Stergem tot din folder-ul de cache
-# folder = 'cache/'
-# for filename in os.listdir(folder):
-#     file_path = os.path.join(folder, filename)
-#     try:
-#         if os.path.isfile(file_path) or os.path.islink(file_path):
-#             os.unlink(file_path)
-#         elif os.path.isdir(file_path):
-#             shutil.rmtree(file_path)
-#     except Exception as e:
-#         st.warning('Failed to delete %s. Reason: %s' % (file_path, e))
-#         print('Failed to delete %s. Reason: %s' % (file_path, e))
+folder = 'src/'
+for filename in os.listdir(folder):
+    file_path = os.path.join(folder, filename)
+    try:
+        if os.path.isfile(file_path) or os.path.islink(file_path):
+            os.unlink(file_path)
+        elif os.path.isdir(file_path):
+            shutil.rmtree(file_path)
+    except Exception as e:
+        st.warning('Failed to delete %s. Reason: %s' % (file_path, e))
+        print('Failed to delete %s. Reason: %s' % (file_path, e))
 
 ### Aplicatia ###
 language = st.radio('Language: ', ('Română', 'English'))
@@ -62,7 +62,7 @@ st.audio(uploaded_file, format='audio/ogg')
 
 # Generam byte data din fisierul uploadat cu posibilitatea de a-l stoca local
 bytes_data = uploaded_file.getvalue()
-with open('cache/recording.wav', mode='bx') as f:
+with open('src/recording.wav', mode='bx') as f:
     f.write(bytes_data)
 
 # Generam transcript/Speech to text-ul efectiv
